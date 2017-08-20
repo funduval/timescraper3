@@ -1,0 +1,15 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+
+  /*Add Background Texture*/
+  background-image: url('../images/nytimes-headquarters.jpg');
+  display: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+main {
+  flex: 1 0 auto;
+}

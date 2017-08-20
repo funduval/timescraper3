@@ -36,8 +36,8 @@ router.get('/articles', function (req, res){
       // or send the doc to the browser as a json object
       else {
         var hbsObject = {articles: doc}
-        res.render('index', hbsObject);
-        // res.json(hbsObject)
+        // res.render('index', hbsObject);
+        res.json(hbsObject)
       }
     });
 
@@ -50,23 +50,21 @@ router.get('/scrape', function(req, res) {
   // First, grab the body of the html with request
   request('http://www.nytimes.com/', function(error, response, html) {
 
-    // Then, load html into cheerio and save it to $ for a shorthand selector
+    // Then, load html into cheerio and save it to $ 
     var $ = cheerio.load(html);
 
-    // This is an error handler for the NY Times website only, they have duplicate articles for some reason...
-    var titlesArray = [];
+    
 
-    // Now, grab every everything with a class of "inner" with each "article" tag
     $('div .collection headlines').each(function(i, element) {
 
         // Create an empty result object
         var result = {};
 
-        // Collect the Article Title (contained in the "h2" of the "header" of "this")
-        result.title = $(this).children("ul .theme-news-headlines").children("").text().trim() + ""; //convert to string for error handling later
+        result.title = $(this).children("ul").children("li").children("article").children("h2").trim() + ""; //convert to string for error handling later
 
-        // Collect the Article Link (contained within the "a" tag of the "h2" in the "header" of "this")
-        // result.link = $(this).children('h2').children('a').attr('href').trim();
+      
+        result.link = $(this).children("ul").children("li").children("article").children("h2").children("i").children("a").attr("href").trim();
+
 
         
     });

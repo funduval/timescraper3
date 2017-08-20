@@ -16,11 +16,11 @@ var ArticleSchema = new Schema({
     required: true
   },
 
-  // // Link to Article
-  // link: {
-  //   type: String,
-  //   required: true
-  // },
+  // Link to Article
+  link: {
+    type: String,
+    required: true
+  },
   
   // // Summary of Article
   // summary: {
