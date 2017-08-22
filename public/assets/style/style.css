@@ -1,15 +1,36 @@
+
 body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
 
-  /*Add Background Texture*/
+
   background-image: url('../images/nytimes-headquarters.jpg');
-  display: cover;
   background-repeat: no-repeat;
   background-position: center;
+
 }
 
 main {
   flex: 1 0 auto;
+}
+
+
+#titleBar{
+	display: inline;
+	float:left;
+	margin: 0px 20px 0px 20px;
+}
+#scrapeIcon{
+	font-size:40px;
+	line-height: 60px;
+	
+
+}
+#scrapeButton{
+
+	float:left;
+	width: 180px;
+	margin-top: 4px;
+
 }

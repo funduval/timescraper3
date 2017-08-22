@@ -4,7 +4,7 @@
     <!-- Tab Title -->
     <title>Timescraper</title>
     <!-- Favicon -->
-    <link rel="icon" href="assets/images/newspaper_icon.png">
+    <link rel="icon" href="assets/images/greyTimes.png">
     <!-- View Port Size -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Materialize - Compiled and minified CSS -->
@@ -21,22 +21,16 @@
     <div class="navbar-fixed">
       <nav>
         <div class="nav-wrapper grey darken-3">
-          <a href="/" class="brand-logo"><i class="material-icons">loop</i> Timescraper</a>
+        <h2 id="titleBar">Timescraper</h2>
+        <a href='/' class="waves-effect waves-light btn btn-large" id="scrapeButton"><i class="material-icons right" id="scrapeIcon">blur_linear</i>Scrape</a>
+
           <a href="" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-          <ul class="right hide-on-med-and-down">
-            <li><a href="http://www.nytimes.com/" target="_new">The NYTimes</a></li>
-            <li><a href="https://github.com/funduval/timescraper3" target="_new">Github Repo</a></li>
-          </ul>
+          
         </div>
       </nav>
     </div>
 
-    <!-- For Mobile Nav Bar -->
-    <ul class="side-nav darken-3" id="mobile-demo">
-      <li><a href="http://www.nytimes.com/" target="_new">The NYTimes</a></li>
-      <li><a href="https://github.com/funduval/timescraper3" target="_new">Github Repo</a></li>
-    </ul>
-
+   
 
     <!-- Page Content -->
     <main> 
@@ -54,12 +48,7 @@
 
     <!-- Footer -->
     <footer class="page-footer grey darken-3">
-      <div class="footer-copyright">
-        <div class="container">
-        © All articles were web scraped from 
-        <a class="grey-text text-lighten-4" href="http://www.nytimes.com/">www.nytimes.com</a>
-        </div>
-      </div>
+      
     </footer>
 
 

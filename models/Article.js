@@ -22,11 +22,11 @@ var ArticleSchema = new Schema({
     required: true
   },
   
-  // // Summary of Article
-  // summary: {
-  //   type: String,
-  //   required: true
-  // },
+  // Summary of Article
+  summary: {
+    type: String,
+    required: true
+  },
 
   // Date of article scrape (saving as a string to pretify it in Moment-JS)
   updated: {

@@ -6,12 +6,12 @@ var exphbs = require('express-handlebars');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
-var logger = require('morgan'); // for debugging
-var request = require('request'); // for web-scraping
-var cheerio = require('cheerio'); // for web-scraping
+var logger = require('morgan'); 
+var request = require('request'); 
+var cheerio = require('cheerio'); 
 
 
-// Initialize Express for debugging & body parsing
+// Initialize Express 
 var app = express();
 app.use(logger('dev'));
 app.use(bodyParser.urlencoded({
@@ -30,7 +30,8 @@ app.set('view engine', 'handlebars');
 // ---------------------------------------------------------------------------------------------------------------
 // Connect to localhost if not a production environment
 
-  mongoose.connect('mongodb://localhost/timescraper3');
+
+  mongoose.connect('mongodb://localhost/timescraper3',{useMongoClient: true});
 
 
 var db = mongoose.connection;
