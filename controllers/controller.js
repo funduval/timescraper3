@@ -57,19 +57,19 @@ router.get('/scrape', function(req, res) {
     var titlesArray = [];
 
     // Now, grab every everything with a class of "inner" with each "article" tag
-    $('.story-heading').each(function(i, element) {
+    $('article h2').each(function(i, element) {
 
         // Create an empty result object
         var result = {};
 
         // Collect the Article Title (contained in the "h2" of the "header" of "this")
-        result.title = $(element).children().children().text().trim() + ""; //convert to string for error handling later
-
-        // Collect the Article Link (contained within the "a" tag of the "h2" in the "header" of "this")
-       result.link = $(element).children().attr('href') + "";
+        result.title = $(this).children("a").text();
+        result.link = $(this).children("a").attr("href"); 
+       
 
         // Collect the Article Summary (contained in the next "div" inside of "this")
-        result.summary = $(element).text().trim() + "";
+        result.summary = $(this).children("a").text();
+
         //convert to string for error handling later
       
 

@@ -1,6 +1,4 @@
-{{!-- Templating for all Articles  --}}
 
-{{!-- Iterate Over all the articles --}}
 {{#each articles}}
   <ul class="collapsible" data-collapsible="accordion">
 
@@ -23,14 +21,14 @@
     </li>
 
 
-    <!-- Add Comments Drop Down -->
+  
     <li>
       <div class="collapsible-header"><i class="material-icons">comment</i>Add a Comment</div>
       <div class="collapsible-body" style="background-color: white;">
 
         <form id="form-add-{{_id}}" action="add/comment/{{_id}}" method="post" style="background-color: white;">
 
-          <!-- Author Name Input -->
+        
           <div class="row">
             <div class="input-field col s2"></div>
             <div class="input-field col s8">
@@ -39,7 +37,7 @@
             </div>
           </div>
           
-          <!-- Comment Input -->
+       
           <div class="row">
             <div class="input-field col s2"></div>
             <div class="input-field col s8">
@@ -48,7 +46,7 @@
             </div>
           </div>
 
-            <!-- Submit Button -->
+           
             <div class="row">
               <div class="input-field col s2"></div>
               <div class="input-field col s8">
@@ -62,24 +60,19 @@
     </li>
 
 
-    <!-- View Comments Drop Down -->
     <li>
       <div class="collapsible-header"><i class="material-icons">thumbs_up_down</i>View Comments</div>
       <div class="collapsible-body" style="background-color: white;">
       
-        {{!-- Check if the article has comments --}}
         {{#if comments}}
 
-          {{!-- Article has comments so iterate over them  --}}
           <ul class="collection">
             {{#each comments}}
             
               <li class="collection-item">
 
-                {{!-- Add Author Name --}}
                 <b>{{author}}</b> 
 
-                {{!-- Add a Delete Button --}}
                 <span class="badge">
                   <form id="form-delete-{{_id}}" action="remove/comment/{{_id}}" method="post">
                     <input class="btn-small delete-comment-button" data-id="{{_id}}" type="submit" value="Delete" style="color: white; background-color: red; border-color: red;">
@@ -88,16 +81,14 @@
 
                 <br>
 
-                {{!-- Add the Content of the Comment --}}
                 {{content}}
 
               </li> 
             {{/each}}
           </ul>
         
-        {{!-- No comments, so display message --}}
         {{else}}
-          <p>No Comments Yet for This Article</p>
+          <p>No Comments So Far</p>
         {{/if}}
             
         

@@ -9,6 +9,7 @@ var mongoose = require('mongoose');
 var logger = require('morgan'); 
 var request = require('request'); 
 var cheerio = require('cheerio'); 
+var promise = require('bluebird')
 
 
 // Initialize Express 
